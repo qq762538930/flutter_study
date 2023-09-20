@@ -4,7 +4,7 @@ void main() {
   Student c = Student('王麻子', 113, 99, school: '恒大华府');
 
   print('此处没有重写父级,infoe${c.infoe()}');
-  print('此处重写了父级,info${c.info()}');
+  print('此处重写父级,info${c.info()}');
 
   // print(a.info());
   // print(b.name);
