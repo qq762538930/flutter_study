@@ -3,7 +3,7 @@ void main() {
   Human b = Human('李四', 66, 90); // tag1
   Student c = Student('王麻子', 113, 99, school: '恒大华府');
 
-  print(c.info());
+  print(c.infoe());
 
   // print(a.info());
   // print(b.name);
@@ -29,10 +29,9 @@ class Student extends Human {
 
   Student(super.name, super.weight, super.height, {required this.school});
   // 重写info
-  @override
-  String info() {
-    String info ="${super.info()}school:$school";
+  String infoe() {
+    String infoe ="${super.info()}school:$school";
     // 此处返回的是重写过后的Student info
-    return info;
+    return infoe;
   }
 }
