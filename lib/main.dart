@@ -28,6 +28,7 @@ class Student extends Human {
   final String school;
 
   Student(super.name, super.weight, super.height, {required this.school});
+  // 重写info
   @override
   String info() {
     String info ="${super.info()}school:$school";
