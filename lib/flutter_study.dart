@@ -3,7 +3,8 @@ void main() {
   Human b = Human('李四', 66, 90); // tag1
   Student c = Student('王麻子', 113, 99, school: '恒大华府');
 
-  print(c.infoe());
+  print('此处没有重写父级,infoe${c.infoe()}');
+  print('此处重写了父级,info${c.infoe()}');
 
   // print(a.info());
   // print(b.name);
@@ -28,10 +29,17 @@ class Student extends Human {
   final String school;
 
   Student(super.name, super.weight, super.height, {required this.school});
-  // 重写info
+  // 写了一个新的infoe包含了父级的info
   String infoe() {
     String infoe ="${super.info()}school:$school";
     // 此处返回的是重写过后的Student info
     return infoe;
+  }
+  // 重写info
+  @override
+  String info() {
+    String info ="${super.info()}school:$school";
+    // 此处返回的是重写过后的Student info
+    return info;
   }
 }
