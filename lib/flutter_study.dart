@@ -4,7 +4,7 @@ void main() {
   Student c = Student('王麻子', 113, 99, school: '恒大华府');
 
   print('此处没有重写父级,infoe${c.infoe()}');
-  print('此处重写了父级,info${c.infoe()}');
+  print('此处重写了父级,info${c.info()}');
 
   // print(a.info());
   // print(b.name);
@@ -29,6 +29,8 @@ class Student extends Human {
   final String school;
 
   Student(super.name, super.weight, super.height, {required this.school});
+
+  //注: 通过 super. 可调用父类方法; 一般子类覆写方法时，加 @override 注解进行示意 (非强制)
   // 写了一个新的infoe包含了父级的info
   String infoe() {
     String infoe ="${super.info()}school:$school";
@@ -37,7 +39,8 @@ class Student extends Human {
   }
   // 重写info
   @override
-  String info() {
+  String
+  info() {
     String info ="${super.info()}school:$school";
     // 此处返回的是重写过后的Student info
     return info;
