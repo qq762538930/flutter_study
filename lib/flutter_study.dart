@@ -1,4 +1,9 @@
+
+
+import 'dart:io';
+
 void main() {
+  tets2();
   Human a = Human('张三', 88, 9);
   Human b = Human('李四', 66, 90); // tag1
   Student c = Student('王麻子', 113, 99, school: '恒大华府');
@@ -45,4 +50,14 @@ class Student extends Human {
     // 此处返回的是重写过后的Student info
     return info;
   }
+}
+
+
+Future<void> tets2() async {
+  String path = r'/home/test/Desktop/flutter/flutter_study/pubspec.yaml';
+  File file = File(path);
+  print("开始读取");
+  String content = await file.readAsString();
+  print("===读取完毕: 文字内容长度 = ${content.length}====");
+  print("做些其他的事");
 }
